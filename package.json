@@ -82,7 +82,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/freeshineit/react-library-starter.git",
+    "url": "git@github.com:freeshineit/react-typescript-library-starter.git",
     "branch": "main",
     "platform": "github"
   }

@@ -11,7 +11,9 @@
 # production
 /build
 /dist
-/lib
+/lib/cjs
+/lib/es
+/lib/umd
 /report
 
 # misc

@@ -13,12 +13,19 @@
   <body>
     <div id="root"></div>
     <script src="./lib/bundle/react-lib.umd.js"></script>
-    <link rel="stylesheet" href="./lib/bundle/style.css" />
+    <style>
+      .container-center {
+        width: 1100px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+      }
+    </style>
 
     <script type="text/babel">
       const Input = window.reactLib;
       ReactDOM.render(
-        <div>
+        <div className='container-center '>
           <Input color='primary' />
         </div>,
         document.getElementById('root')

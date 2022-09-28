@@ -142,9 +142,11 @@ async function buildBundles(cb) {
   cb && cb();
 }
 
+const filename = `react-lib-template`;
+
 function buildCompatibleUMD() {
   return gulp
-    .src('lib/bundle/react-lib.umd.js')
+    .src(`lib/bundle/${filename}.umd.js`)
     .pipe(
       babel({
         presets: [
@@ -160,9 +162,9 @@ function buildCompatibleUMD() {
         ],
       })
     )
-    .pipe(rename('react-lib.compatible.umd.js'))
+    .pipe(rename(`${filename}.compatible.umd.js`))
     .pipe(gulp.dest('lib/bundle/'))
-    .pipe(rename('react-lib.js'))
+    .pipe(rename(`${filename}.js`))
     .pipe(gulp.dest('lib/umd/'));
 }
 
@@ -174,7 +176,7 @@ function umdWebpack() {
       webpackStream(
         {
           output: {
-            filename: 'react-lib.js',
+            filename: `${filename}.js`,
             library: {
               type: 'umd',
               name: 'reactLib',

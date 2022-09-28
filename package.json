@@ -1,7 +1,9 @@
 {
-  "name": "react-lib-template",
-  "version": "0.1.0",
+  "name": "@skax/react-lib-template",
+  "version": "0.1.0-alpha1",
   "private": false,
+  "author": "ShineShao <xiaoshaoqq@gmail.com>",
+  "homepage": "https://freeshineit.github.io/react-typescript-library-starter",
   "files": [
     "./lib"
   ],
@@ -16,8 +18,8 @@
   "module": "./es/index.js",
   "types": "./es/index.d.ts",
   "typings": "./es/index.d.ts",
-  "unpkg": "./umd/react-lib.js",
-  "GravityCDN": "./umd/react-lib.js",
+  "unpkg": "./umd/react-lib-template.js",
+  "GravityCDN": "./umd/react-lib-template.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",

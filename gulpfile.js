@@ -23,6 +23,21 @@ function clean() {
 
 const srcDir = `./src/lib`;
 
+const packageName = packageJson.name.split('/');
+const filename =
+  packageName.length > 1 ? packageName[packageName.length - 1] : packageName[0];
+
+// 驼峰
+const libraryName = filename.replace(/\-(\w)/g, function (all, letter) {
+  return letter.toUpperCase();
+});
+
+const banner = `/*
+* ${filename}.js v${packageJson.version}
+* (c) ${new Date().getFullYear()} ${packageJson.author}
+* Released under the MIT License.
+*/`;
+
 function buildStyle() {
   return gulp
     .src([`${srcDir}/**/*.scss`], {
@@ -94,7 +109,7 @@ function buildDeclaration() {
 }
 
 function getViteConfigForPackage({ env, formats, external }) {
-  const name = packageJson.name;
+  const name = filename;
   const isProd = env === 'production';
   return {
     root: process.cwd(),
@@ -107,7 +122,7 @@ function getViteConfigForPackage({ env, formats, external }) {
 
     build: {
       lib: {
-        name: 'reactLib',
+        name: libraryName,
         entry: './lib/es/index.js',
         formats,
         fileName: format => `${name}.${format}${isProd ? '' : `.${env}`}.js`,
@@ -141,8 +156,6 @@ async function buildBundles(cb) {
   await Promise.all(configs.map(config => vite.build(config)));
   cb && cb();
 }
-
-const filename = `react-lib-template`;
 
 function buildCompatibleUMD() {
   return gulp
@@ -179,7 +192,7 @@ function umdWebpack() {
             filename: `${filename}.js`,
             library: {
               type: 'umd',
-              name: 'reactLib',
+              name: libraryName,
             },
           },
           mode: 'production',

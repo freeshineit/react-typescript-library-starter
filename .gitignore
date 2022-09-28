@@ -11,10 +11,9 @@
 # production
 /build
 /dist
-/lib/cjs
-/lib/es
-/lib/umd
+/lib
 /report
+/docs
 
 # misc
 .DS_Store

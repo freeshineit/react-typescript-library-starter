@@ -35,7 +35,7 @@
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "docs": "cross-env BUILD_PATH=docs react-scripts build",
+    "docs": "cross-env BUILD_PATH=docs PUBLIC_URL=/react-typescript-library-starter/ react-scripts build",
     "build": "gulp",
     "postinstall": "husky install .husky"
   },

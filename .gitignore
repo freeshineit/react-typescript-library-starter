@@ -13,7 +13,6 @@
 /dist
 /lib
 /report
-/docs
 
 # misc
 .DS_Store

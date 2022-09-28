@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.883a0e60.css","mappings":"AAAA,kBAEE,aACA,sBACA,cAHA,YAGA","sources":["Page.scss"],"sourcesContent":[".container-center {\n  width: 1100px;\n  display: flex;\n  flex-direction: column;\n  margin: 0 auto;\n}\n"],"names":[],"sourceRoot":""}

@@ -13,4 +13,7 @@ yarn  test
 # production
 yarn build
 
+# document
+yarn docs
+
 ```

@@ -1,6 +1,6 @@
 {
   "name": "@skax/react-lib-template",
-  "version": "0.1.0-alpha1",
+  "version": "0.1.0-alpha3",
   "private": false,
   "author": "ShineShao <xiaoshaoqq@gmail.com>",
   "homepage": "https://freeshineit.github.io/react-typescript-library-starter",
@@ -37,9 +37,10 @@
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "docs": "cross-env BUILD_PATH=docs PUBLIC_URL=/react-typescript-library-starter/ react-scripts build",
-    "build": "gulp",
-    "postinstall": "husky install .husky"
+    "docs": "cross-env BUILD_PATH=docs PUBLIC_URL=./ react-scripts build",
+    "build": "gulp && npm run docs",
+    "postinstall": "husky install .husky",
+    "pub": "npm publish ./lib"
   },
   "eslintConfig": {
     "extends": [

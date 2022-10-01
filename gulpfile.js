@@ -18,7 +18,7 @@ const packageJson = require('./package.json');
 const StatoscopeWebpackPlugin = require('@statoscope/webpack-plugin').default;
 
 function clean() {
-  return del('./lib/**');
+  return del(['./lib/**', './docs/**', './dist/**']);
 }
 
 const srcDir = `./src/lib`;
@@ -111,15 +111,14 @@ function buildDeclaration() {
 function getViteConfigForPackage({ env, formats, external }) {
   const name = filename;
   const isProd = env === 'production';
+  // https://github.com/vitejs/vite/blob/main/packages/vite/src/node/config.ts
   return {
     root: process.cwd(),
-
     mode: env,
-
     logLevel: 'silent',
-
     define: { 'process.env.NODE_ENV': `"${env}"` },
-
+    // Set to `false` or an empty string to disable copied static assets to build dist dir.
+    publicDir: false,
     build: {
       lib: {
         name: libraryName,

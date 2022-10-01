@@ -79,6 +79,7 @@ function buildES() {
   const tsProject = ts({
     ...tsconfig.compilerOptions,
     module: 'ES6',
+    isolatedModules: false,
   });
   return gulp
     .src([`${srcDir}/**/*.{ts,tsx}`], {
@@ -89,13 +90,15 @@ function buildES() {
       babel({
         plugins: ['./scripts/babel-transform-scss-to-css'],
       })
-    );
+    )
+    .pipe(gulp.dest('lib/es/'));
 }
 
 function buildDeclaration() {
   const tsProject = ts({
     ...tsconfig.compilerOptions,
     module: 'ES6',
+    isolatedModules: false,
     declaration: true,
     emitDeclarationOnly: true,
   });

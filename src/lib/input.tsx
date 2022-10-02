@@ -6,5 +6,5 @@ export interface InputProps {
 }
 
 export const Input = () => {
-  return <input />;
+  return <input placeholder='react typescript library starter' />;
 };

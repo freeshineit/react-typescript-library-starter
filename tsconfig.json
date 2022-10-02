@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./lib",
-    "rootDirs": ["src", "config"],
+    "rootDirs": ["src"],
     "target": "ES6",
     "module": "esnext",
     "moduleResolution": "node",
